@@ -17,7 +17,7 @@ const JobList = () => {
 
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/jobs?page=${page}&limit=10`);
+      const res = await axios.get(`https://jobvisstabackend.onrender.com/api/jobs?page=${page}&limit=10`);
       setJobs((prev) => [...prev, ...res.data.jobs]); // Append new jobs
       setHasMore(res.data.jobs.length > 0); // Check if more jobs exist
     } catch (error) {

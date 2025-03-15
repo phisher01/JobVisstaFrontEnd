@@ -11,7 +11,7 @@ const JobDetail = () => {
   useEffect(() => {
     const fetchJobDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/jobs/${jobId}`);
+        const res = await axios.get(`https://jobvisstabackend.onrender.com/api/jobs/${jobId}`);
         setJob(res.data);
       } catch (error) {
         console.error('Error fetching job details:', error);
