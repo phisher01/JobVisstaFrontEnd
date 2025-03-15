@@ -13,11 +13,11 @@ export const fetchJobs = async () => {
   }
 };
 
-// Search jobs by title in the backend
-export const searchJobs = async (title) => {
+// Search jobs using provided filters (e.g., title, location, experience)
+export const searchJobs = async (filters) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/search-jobs`, {
-      params: { title }
+      params: filters,
     });
     return response.data;
   } catch (error) {

@@ -6,12 +6,11 @@ const SearchBar = ({ onSearch, loading }) => {
   const [filters, setFilters] = useState({
     title: "",
     location: "",
-    experience: "", // initially a string; will be converted to a number on change
+    experience: "", // initially a string; converted to a number on change if not empty
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // Convert experience to a number (or keep it as empty string)
     setFilters({
       ...filters,
       [name]: name === "experience" ? (value === "" ? "" : Number(value)) : value,

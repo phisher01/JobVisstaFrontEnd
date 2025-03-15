@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
 import JobCard from './JobCard';
 
 const JobList = ({ jobs = [] }) => {
+  // If jobs is not an array or empty, display a message.
   if (!Array.isArray(jobs) || jobs.length === 0) {
     return (
       <Typography
@@ -20,7 +20,11 @@ const JobList = ({ jobs = [] }) => {
   return (
     <Grid container spacing={2}>
       {jobs.map((job, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index}>
+        <Grid 
+          item 
+          xs={12} sm={6} md={4} 
+          key={job._id || job.id || index}  // ✅ Added unique key
+        >
           <JobCard job={job} />
         </Grid>
       ))}
