@@ -36,7 +36,7 @@ const Home = () => {
       if (!filters.title && !filters.location && !filters.experience) {
         await fetchAllJobs();
       } else {
-        const res = await axios.get('http://localhost:5000/api/search-jobs', {
+        const res = await axios.get('https://jobvisstabackend.onrender.com/api/search-jobs', {
           params: filters,
         });
         setJobs(res.data);
